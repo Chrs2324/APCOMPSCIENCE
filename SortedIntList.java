@@ -1,7 +1,5 @@
 public class SortedIntList extends IntList
 {
-	protected int[] list;
-	protected int numElements = 0;
 
 	//-------------------------------------------------------------
 	// Constructor -- creates an integer list of a given size.
@@ -22,26 +20,39 @@ public class SortedIntList extends IntList
 		    System.out.println("Can't add, list is full");
 		else
 		{
-			list[numElements] = value;
-			numElements++;
-		}
-    }
-
-    public void sortList(int size)
-	{
-		int[] sortedList = list.clone();
-		for (int i = 0; i < sortedList.length; i++)
-		{
-			for (int q = i+1; q < sortedList.length; i++)
+			if (numElements == 0)
 			{
-				if ((sortedList[i] > sortedList[q] && (i != q)))
+				list[0] = value;
+				numElements++;
+			}
+			else
+			{
+				for (int i = 0; i < numElements; i++)
 				{
-					int temp = sortedList[q];
-					sortedList[q] = sortedList[i];
-					sortedList[i] = temp;
+					if (list[numElements-1] < value)
+					{
+						list[numElements]=value;
+						break;
+					}
+					if (list[i] >= value)
+					{
+						int temp;
+						int temp2 = list[i];
+						list[i] = value;
+						list[i+1]=temp2;
+
+						for (int k = i+1; k < numElements; k++)
+						{
+							temp = list[k];
+							list[k] = temp2;
+							temp2 = list[k+1];
+						}
+						break;
+					}
+					System.out.println(this);
 				}
+				numElements++;
 			}
 		}
 	}
 }
-
