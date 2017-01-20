@@ -6,7 +6,7 @@
 //
 // ****************************************************************
 import java.util.Scanner;
-public abstract class MultChoice extends TestQuestion
+public class MultChoice extends TestQuestion
 
 {
     private String[] choices;
@@ -20,7 +20,7 @@ public abstract class MultChoice extends TestQuestion
     // as a parameter to read correctly if the input is redirected from
     // a file.
     //---------------------------------------
-    protected void readQuestion(Scanner scan)
+    public void readQuestion(Scanner scan)
     {
 	numChoices = scan.nextInt();
 	choices = new String[numChoices];

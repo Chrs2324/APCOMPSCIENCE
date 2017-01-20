@@ -4,31 +4,34 @@ public class WriteTest
 {
 	public static void main(String[] args)
 	{
-		int count = 0;
-		TestQuestion[] questions = new TestQuestion[count];
-		TestQuestion q;
-		String t;
+
+		TestQuestion[] questions;
+		TestQuestion q, temp;
+		int count, foobar;
+		String b, t;
 
 		Scanner scan = new Scanner(System.in);
 
+		System.out.print("Number of Choices: ");
 		count = scan.nextInt();
-		String b = scan.nextLine();
+		System.out.print("Type in anything: ");
+		b = scan.nextLine();
 
 		for (int i = 0; i < count; i++)
 		{
 			b = scan.nextLine();
-			int foobar = scan.nextInt();
+			foobar = scan.nextInt();
 			t = scan.nextLine();
 			if (b.equals("e"))
 			{
-				Essay temp = new Essay();
+				q = new Essay();
 			}
 			else if (b.equals("m"))
 			{
-				MultChoice temp = new MultChoice();
+				q = new MultChoice();
 			}
-			temp.readQuestion();
-			questions[i] = temp;
+			q.readQuestion();
+			questions[i] = q;
 		}
 	}
 }

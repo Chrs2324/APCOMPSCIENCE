@@ -6,10 +6,15 @@
 //
 // ****************************************************************
 import java.util.Scanner;
-public abstract class Essay extends TestQuestion
+public class Essay extends TestQuestion
 {
     private int numLines;
     private String[] essayChoice;
+
+    //public Essay (String s)
+    //{
+		//question = s;
+	//}
 
     //---------------------------------------
     // Reads the next question from the standard input.
@@ -18,10 +23,11 @@ public abstract class Essay extends TestQuestion
     // as a parameter to read correctly if the input is redirected from
     // a file.
     //---------------------------------------
-    protected void readQuestion(Scanner scan)
+    public void readQuestion(Scanner scan)
     {
 		numLines = scan.nextInt();
 		essayChoice = new String[numLines];
+		//question = scan.nextLine();
     }
 
     //---------------------------------------
