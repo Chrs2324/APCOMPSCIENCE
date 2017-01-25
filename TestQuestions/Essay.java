@@ -9,12 +9,6 @@ import java.util.Scanner;
 public class Essay extends TestQuestion
 {
     private int numLines;
-    private String[] essayChoice;
-
-    //public Essay (String s)
-    //{
-		//question = s;
-	//}
 
     //---------------------------------------
     // Reads the next question from the standard input.
@@ -26,8 +20,7 @@ public class Essay extends TestQuestion
     public void readQuestion(Scanner scan)
     {
 		numLines = scan.nextInt();
-		essayChoice = new String[numLines];
-		//question = scan.nextLine();
+		question = scan.nextLine();
     }
 
     //---------------------------------------

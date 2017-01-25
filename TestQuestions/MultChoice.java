@@ -30,8 +30,8 @@ public class MultChoice extends TestQuestion
 
 
 	//Read choices
-	for (int q = 0; q < numChoices; q++)
-		choices[q] = scan.nextLine();
+	for (int i = 0; i < choices.length; i++)
+		choices[i] = scan.nextLine();
     }
 
     //---------------------------------------
