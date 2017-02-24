@@ -61,9 +61,20 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-	}
+	public void shuffle()
+	{
+		int k = values.length;
+
+		Random rand = new Random();
+
+		for (int i = k - 1; i >= 0; i--)
+		{
+			int q = rand.nextInt(k);
+			int p = values[i];
+			values[i] = values[q];
+			values[q] = values[i];
+		}		
+        }
 
 	/**
 	 * Deals a card from this deck.
