@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * This is a class that tests the Deck class.
  */
@@ -8,6 +10,9 @@ public class DeckTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
+
 		String[] ranks = {"jack", "queen", "king"};
 		String[] suits = {"blue", "red"};
 		int[] pointValues = {11, 12, 13};
@@ -50,6 +55,23 @@ public class DeckTester {
 		System.out.println("  deal: " + d.deal());
 		System.out.println();
 		System.out.println();
+
+		ranks = new String[]{"King", "Queen", "Jack"};
+		suits = new String[]{"Clubs", "Spades", "Diamonds", "Hearts"};
+		pointValues = new int[]{11, 13, 12};
+		Deck d2 = new Deck(ranks, suits, pointValues);
+
+		System.out.println("**** Shuffling Cards in the Deck ****");
+		System.out.println("  toString:\n" + d2.toString());
+		System.out.println("  isEmpty: " + d2.isEmpty());
+		System.out.println("  size: " + d2.size());
+		System.out.println();
+		System.out.println();
+
+		d2.shuffle();
+		System.out.println("  deal: " + d2.deal());
+
+
 
 		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
 	}
