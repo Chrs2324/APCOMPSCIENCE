@@ -64,18 +64,19 @@ public class Deck {
 	 */
 	public void shuffle()
 	{
-		int[] values = new int[cards.size()];
-		int k = values.length;
+		List<Card> a = cards;
+		int k = a.size();
 
 		Random rand = new Random();
 
 		for (int i = k - 1; i >= 0; i--)
 		{
 			int q = rand.nextInt(k);
-			int p = values[i];
-			values[i] = values[q];
-			values[q] = values[i];
+			Card p = a.get(i);
+			a.set(i, a.get(q));
+			a.set(q, a.get(i));
 		}
+		cards = a;
     }
 
 	/**
